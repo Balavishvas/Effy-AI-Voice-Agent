@@ -7,7 +7,7 @@ from livekit import api
 
 load_dotenv()
 
-PORT = 8000
+PORT = int(os.getenv("PORT", 8000))
 LIVEKIT_URL = os.getenv("LIVEKIT_URL")
 LIVEKIT_API_KEY = os.getenv("LIVEKIT_API_KEY")
 LIVEKIT_API_SECRET = os.getenv("LIVEKIT_API_SECRET")
