@@ -1,3 +1,4 @@
+import asyncio
 from dotenv import load_dotenv
 
 from livekit import agents, rtc
@@ -39,6 +40,9 @@ async def my_agent(ctx: agents.JobContext):
     await session.generate_reply(
         instructions= RESPONSE
     )
+
+    while ctx.room.isconnected():
+        await asyncio.sleep(1)
 
 
 if __name__ == "__main__":
