@@ -12,5 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Run the agent in production start mode
-CMD ["python", "start.py"]
+# Run only the LiveKit agent worker (web frontend is served by Vercel)
+CMD ["python", "agent.py", "start"]
